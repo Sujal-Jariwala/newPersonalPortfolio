@@ -39,7 +39,7 @@ export default function FeaturedWork() {
                     </h2>
 
                     <a
-                        href="#"
+                        href="/projects"
                         className="text-sm text-zinc-500 hover:text-zinc-900 transition-colors"
                     >
                         View all projects →
