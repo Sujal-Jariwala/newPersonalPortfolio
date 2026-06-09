@@ -26,7 +26,7 @@ export default function Navbar() {
 
     return (
         <>
-            <header className="w-full px-7 py-4 flex">
+            <header className="fixed top-0 left-0 right-0 bg-white/75 backdrop-blur-md z-30 w-full px-7 py-4 flex">
                 <div className="flex justify-between w-full items-center">
                     {/* Logo */}
                     <a href="/" className="font-semibold text-[20px]">Sujal</a>
@@ -114,8 +114,7 @@ export default function Navbar() {
                     }`}
             >
                 {/* Drawer header */}
-                <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
-                    <span className="font-semibold text-[18px]">Sujal</span>
+                <div className="flex items-center justify-end px-6 py-5 border-b border-gray-100">
                     <button
                         className="flex items-center justify-center w-8 h-8 rounded-md hover:bg-gray-100 transition-colors"
                         onClick={() => setMenuOpen(false)}
@@ -135,15 +134,17 @@ export default function Navbar() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setMenuOpen(false)}
-                                className={`font-semibold text-[15px] px-4 py-3 rounded-md transition-colors flex gap-3 items-center ${isActive
+                                className={`font-semibold text-[15px] px-4 py-3 rounded-md flex gap-3 items-center ${isActive
                                         ? "bg-zinc-100 text-black font-extrabold"
                                         : "text-zinc-600 hover:bg-gray-50 hover:text-black"
                                     }`}
                                 style={{
-                                    transitionDelay: menuOpen ? `${i * 40 + 60}ms` : "0ms",
                                     transform: menuOpen ? "translateX(0)" : "translateX(16px)",
                                     opacity: menuOpen ? 1 : 0,
-                                    transition: `transform 300ms ease, opacity 300ms ease, background-color 150ms`,
+                                    transitionProperty: "transform, opacity, background-color",
+                                    transitionDuration: "300ms, 300ms, 150ms",
+                                    transitionTimingFunction: "ease, ease, linear",
+                                    transitionDelay: menuOpen ? `${i * 40 + 60}ms, ${i * 40 + 60}ms, 0ms` : "0ms",
                                 }}
                             >
                                 <span className={`text-zinc-400 font-mono transition-opacity duration-200 ${isActive ? "opacity-100" : "opacity-0"
