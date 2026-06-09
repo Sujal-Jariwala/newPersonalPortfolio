@@ -1,0 +1,203 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/ProjectPage";
+import TerminalCTA from "../components/TerminalCTA";
+---
+
+<Layout title="Projects | Sujal Jariwala" description="Selected projects by Sujal Jariwala demonstrating frontend and full-stack development skills using modern web technologies.">
+  <section class="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 bg-white">
+    <div class="max-w-5xl mx-auto flex flex-col">
+      <!-- Header / Status bar -->
+      <div class="border-b border-zinc-100 pb-6 mb-10 select-none">
+        <div
+          class="flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+        >
+          <div class="text-sm font-mono text-zinc-400 truncate">
+            root@sujal:~# cd /projects && ls -la
+          </div>
+          <div class="text-xs font-mono text-zinc-400 shrink-0">
+            Total: 3 objects found
+          </div>
+        </div>
+
+        <!-- Status pill — wraps gracefully on very small screens -->
+        <div
+          class="mt-4 flex flex-wrap items-center gap-x-2 gap-y-1.5 font-mono text-xs text-zinc-500 bg-zinc-50 border border-zinc-200/60 p-3 rounded-lg w-full max-w-xl"
+        >
+          <span
+            class="text-zinc-400 uppercase tracking-wider font-bold text-[10px] bg-zinc-200/60 px-1.5 py-0.5 rounded"
+            >status</span
+          >
+          <span class="text-zinc-400">sys_load:</span>
+          <span class="text-zinc-800 font-medium">nominal</span>
+          <span class="text-zinc-300 hidden sm:inline">|</span>
+          <span class="text-zinc-400">telemetry:</span>
+          <span class="flex items-center gap-1.5 font-bold text-emerald-600">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"
+            ></span>
+            open_to_new_roles
+          </span>
+        </div>
+      </div>
+
+      <!-- Stats grid: 1 col on xs, 2 on sm, 4 on md -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12 sm:mb-16 select-none"
+      >
+        <div
+          class="p-5 rounded-xl border border-zinc-150 bg-zinc-50/20 flex flex-col justify-between font-mono"
+        >
+          <div class="text-xs text-zinc-400">sys_param::react_bundle</div>
+          <div class="mt-4">
+            <div class="text-xl font-bold tracking-tight text-zinc-900">
+              &lt; 500 KB
+            </div>
+            <div
+              class="text-[10px] text-zinc-500 mt-0.5 flex items-center gap-1.5 uppercase tracking-wider font-semibold"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"
+              ></span>
+              optimized from 1.5mb
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="p-5 rounded-xl border border-zinc-150 bg-zinc-50/20 flex flex-col justify-between font-mono"
+        >
+          <div class="text-xs text-zinc-400">sys_param::lighthouse_score</div>
+          <div class="mt-4">
+            <div class="text-xl font-bold tracking-tight text-zinc-900">
+              90+
+            </div>
+            <div
+              class="text-[10px] text-zinc-500 mt-0.5 flex items-center gap-1.5 uppercase tracking-wider font-semibold"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"
+              ></span>
+              improved from 71
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="p-5 rounded-xl border border-zinc-150 bg-zinc-50/20 flex flex-col justify-between font-mono"
+        >
+          <div class="text-xs text-zinc-400">sys_param::state_cache</div>
+          <div class="mt-4">
+            <div class="text-xl font-bold tracking-tight text-zinc-900">
+              Redis
+            </div>
+            <div
+              class="text-[10px] text-zinc-500 mt-0.5 flex items-center gap-1.5 uppercase tracking-wider font-semibold"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"
+              ></span>
+              queues & caching active
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="p-5 rounded-xl border border-zinc-150 bg-zinc-50/20 flex flex-col justify-between font-mono"
+        >
+          <div class="text-xs text-zinc-400">sys_param::api_gateway</div>
+          <div class="mt-4">
+            <div class="text-xl font-bold tracking-tight text-zinc-900">
+              Go / REST
+            </div>
+            <div
+              class="text-[10px] text-zinc-500 mt-0.5 flex items-center gap-1.5 uppercase tracking-wider font-semibold"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block animate-pulse"
+              ></span>
+              concurrent backend
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects list (component handles its own layout) -->
+      <Project client:load />
+
+      <!-- Engineering Creed -->
+      <div class="mt-20 sm:mt-28 pt-10 sm:pt-14 border-t border-zinc-100">
+        <div class="text-xs font-mono text-zinc-400 mb-3 select-none">
+          // cat ~/_protocols/how_i_think.md
+        </div>
+
+        <h2
+          class="text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 mb-8 sm:mb-10"
+        >
+          How I Think / Engineering Creed
+        </h2>
+
+        <!-- Creed grid: 1 col on mobile, 2 on sm, 3 on md -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6"
+        >
+          <div
+            class="p-5 sm:p-6 rounded-xl border border-zinc-200 bg-zinc-50/20 flex flex-col"
+          >
+            <div class="text-xs font-mono text-zinc-400 mb-4 select-none">
+              [0x01_abstractions]
+            </div>
+            <h4 class="text-base font-bold text-zinc-900 mb-2">
+              Earned Abstractions
+            </h4>
+            <p class="text-zinc-600 text-sm leading-relaxed">
+              I completely resist surface-level abstractions. Layers of complex
+              boilerplate are deep technical debt unless they prove absolute
+              necessity. I build with raw software quality and bare-metal
+              performance at the forefront, writing code that behaves
+              predictably under load.
+            </p>
+          </div>
+
+          <div
+            class="p-5 sm:p-6 rounded-xl border border-zinc-200 bg-zinc-50/20 flex flex-col"
+          >
+            <div class="text-xs font-mono text-zinc-400 mb-4 select-none">
+              [0x02_depth]
+            </div>
+            <h4 class="text-base font-bold text-zinc-900 mb-2">
+              Depth over Surface
+            </h4>
+            <p class="text-zinc-600 text-sm leading-relaxed">
+              I don't patch symptoms; I master domain realities. Developing an
+              intuitive, ground-up understanding of system capabilities is
+              exactly what drove the architectural approach for
+              Resuvo—orchestrating an isolated hybrid engine that splits
+              lightweight static Astro spaces from interactive React states.
+            </p>
+          </div>
+
+          <div
+            class="p-5 sm:p-6 rounded-xl border border-zinc-200 bg-zinc-50/20 flex flex-col
+                   sm:col-span-2 md:col-span-1"
+          >
+            <div class="text-xs font-mono text-zinc-400 mb-4 select-none">
+              [0x03_agnosticism]
+            </div>
+            <h4 class="text-base font-bold text-zinc-900 mb-2">
+              User Experience & Stack Fluidity
+            </h4>
+            <p class="text-zinc-600 text-sm leading-relaxed">
+              Users are the ultimate system validators, and their runtime
+              latency dictates the stack. I never anchor myself to a single
+              modern framework ecosystem. I analyze the problem first, adapting
+              dynamically to whatever environment eliminates overhead and
+              minimizes final client load.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <TerminalCTA client:visible />
+  </section>
+</Layout>
